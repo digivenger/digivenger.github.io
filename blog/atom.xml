@@ -1,0 +1,25 @@
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+
+	<title>Ayush Kumar</title>
+	<link href="https://yush.eu.org/blog/atom.xml" rel="self"/>
+	<link href="https://yush.eu.org/blog"/>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>https://yush.eu.org/blog</id>
+	<author>
+		<name>Ayush Kumar</name>
+		<email>webmaster@yush.eu.org</email>
+	</author>
+
+	{% for post in site.posts %}
+		<entry>
+			<title>{{ post.title }}</title>
+			<link href="https://digihtml.github.io{{ post.url }}"/>
+			<updated>{{ post.date | date_to_xmlschema }}</updated>
+			<id>https://yush.eu.org{{ post.id }}</id>
+			<content type="html">{{ post.content | xml_escape }}</content>
+		</entry>
+	{% endfor %}
+
+</feed>
