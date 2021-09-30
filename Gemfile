@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+gemspec
+
+gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
+gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
+gem 'jekyll-sitemap', '~> 1.4'
+gem 'jekyll-robotstxt', '~> 0.3.2'
+gem 'jekyll-favicon', '~> 1.0.0', group: :jekyll_plugins
